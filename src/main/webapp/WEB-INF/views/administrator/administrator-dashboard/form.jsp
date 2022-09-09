@@ -17,18 +17,18 @@
 <%@ page import="org.springframework.data.util.Pair"%>
 
 <style>
- th, td {
- 	padding: 10px 40px;
- 	border-bottom: 1px solid #333;
- }
- 
- h2 {
- 	margin-bottom: 10px;
- }
- 
+th, td {
+	padding: 10px 40px;
+	border-bottom: 1px solid #333;
+}
+
+h2 {
+	margin-bottom: 10px;
+}
+
 table {
- 	margin-bottom: 40px;
- }
+	margin-bottom: 40px;
+}
 </style>
 
 <jstl:forEach var="type" items="${artifactTypes}">
@@ -36,10 +36,11 @@ table {
 		<acme:message
 			code="administrator.dashboard.title.${type.name().toLowerCase()}" />
 	</h2>
-	<h3><acme:message
-				code="administrator.dashboard.total" />: ${totalArtifact.get(type)}</h3>
+	<h3>
+		<acme:message code="administrator.dashboard.total" />
+		: ${totalArtifact.get(type)}
+	</h3>
 	<table>
-	<caption>Accepted Currencies</caption>
 		<tr>
 			<th id="Blank"></th>
 			<jstl:forEach var="currency" items="${acceptedCurrencies}">
@@ -84,7 +85,6 @@ table {
 	<acme:message code="administrator.dashboard.title.FineDish" />
 </h2>
 <table>
-<caption>Fine Dish Statuses</caption>
 	<tr>
 		<th id="Blank"></th>
 		<jstl:forEach var="status" items="${fineDishStatuses}">
@@ -92,8 +92,7 @@ table {
 		</jstl:forEach>
 	</tr>
 	<tr>
-		<td><acme:message
-				code="administrator.dashboard.total" /></td>
+		<td><acme:message code="administrator.dashboard.total" /></td>
 		<jstl:forEach var="status" items="${fineDishStatuses}">
 			<td>${totalFineDish.get(status)}</td>
 		</jstl:forEach>
@@ -130,55 +129,49 @@ table {
 
 
 
-<h2>
-		
-			Pimpam 
-	</h2>
+<h2>Delor</h2>
 <table>
-<caption>Ratio</caption> 
 	<tr>
 		<th scope="row"><acme:message
-				code="administrator.dashboard.form.label.ratio-of-artifacts" />
-		</th>
-		<td>${ratioOfArtifactsWithPimpam}</td>
+				code="administrator.dashboard.form.label.ratio-of-artifacts" /></th>
+		<td>${ratioOfArtifactsWithDelor}</td>
 	</tr>
 </table>
-	
+
 <table>
-<caption>Accepted Currencies</caption>
-		<tr>
-			<th id="Blank"></th>
-			<jstl:forEach var="currency" items="${acceptedCurrencies}">
-				<th id="Blank">${currency}</th>
-			</jstl:forEach>
-		</tr>
-		<tr>
-<tr>
-		<td><acme:message
-				code="administrator.dashboard.averagePimpamBudget" /></td>
+	<tr>
+		<th id="Blank"></th>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${averagePimpamBudget.get(currency)}</td>
+			<th id="Blank">${currency}</th>
+		</jstl:forEach>
+	</tr>
+	<tr>
+	<tr>
+		<td><acme:message
+				code="administrator.dashboard.averageDelorBudget" /></td>
+		<jstl:forEach var="currency" items="${acceptedCurrencies}">
+			<td>${averageDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 	<tr>
 		<td><acme:message
-				code="administrator.dashboard.deviationPimpamBudget" /></td>
+				code="administrator.dashboard.deviationDelorBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${deviationPimpamBudget.get(currency)}</td>
+			<td>${deviationDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 	<tr>
 		<td><acme:message
-				code="administrator.dashboard.maximumPimpamBudget" /></td>
+				code="administrator.dashboard.maximumDelorBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${maximumPimpamBudget.get(currency)}</td>
+			<td>${maximumDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 	<tr>
 		<td><acme:message
-				code="administrator.dashboard.minimumPimpamBudget" /></td>
+				code="administrator.dashboard.minimumDelorBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${minimumPimpamBudget.get(currency)}</td>
+			<td>${minimumDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 </table>
